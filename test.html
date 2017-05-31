@@ -12,43 +12,41 @@
       For best results, don't forget to open the console!
     </h3>
     <script>
-	function spin(quarters){
-		var result = 0;
-		var winnings = 0;
 
-		while (quarters > 0){
-			result = Math.floor(Math.random()*100);
-			if(result == 13){
-				console.log(result);
-				console.log("WINNER!!!");
-				winnings = (Math.floor(Math.random()*49) + 51);
-				quarters += winnings;
-				console.log("You won " + winnings + " quarters!!!");
+	"use strict";
 
-				return quarters;
-			}
-			else {
-				console.log(result);
-				console.log("Bad luck! Try again!");
-			}
-			quarters--;
+
+	function printRoster2(){
+
+		var nameLength = 0;
+
+		var students = [
+			{first_name : 'Michael', last_name : 'Jordan'},
+			{first_name : 'John', last_name : 'Rosales'},
+			{first_name : 'Mark', last_name : 'Guillen'},
+			{first_name : 'KB', last_name : 'Tonel'}
+		];
+
+		var instructors = [
+			{first_name : 'Michael', last_name : 'Choi'},
+			{first_name : 'Martin', last_name: 'Puryear'}
+		];
+
+		console.log("Students:");
+
+		for (var i =0; i<students.length; i++){
+			nameLength = (students[i].first_name).length + (students[i].last_name).length;
+			console.log(i+1 + " - " + students[i].first_name + " " + students[i].last_name + " - " + nameLength);
 		}
-		if (quarters == 0){
-			console.log("Thanks for playing, please insert more quarters!");
-			return quarters;
+
+		console.log("Instructors:");
+
+		for (var j =0; j<instructors.length; j++){
+			nameLength = (instructors[j].first_name).length + (instructors[j].last_name).length;
+			console.log(j+1 + " - " + instructors[j].first_name + " " + instructors[j].last_name + " - " + nameLength);
 		}
+
 	}
-
-
-
-
-
-
-
-
-
-
-
     </script>
   </body>
 </html>
